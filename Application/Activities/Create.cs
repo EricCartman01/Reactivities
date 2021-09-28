@@ -41,7 +41,7 @@ namespace Application.Activities
                 //await _context.SaveChangesAsync();
                 //return Unit.Value;
                 var result = await _context.SaveChangesAsync() > 0;
-                if (!result) return Result<Unit>.Failure("Ops algo deu ruim!");
+                if (!result) return Result<Unit>.Failure("Falha ao criar a Activity");
 
                 return Result<Unit>.Sucess(Unit.Value);
             }

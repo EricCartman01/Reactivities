@@ -45,7 +45,8 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatActivity(Activity activity)
         {
-            return Ok(await Mediator.Send(new Create.Command { Activity = activity }));
+            //return Ok(await Mediator.Send(new Create.Command { Activity = activity }));
+            return HandleResult(await Mediator.Send(new Create.Command { Activity = activity }));
         }
     }
 }
